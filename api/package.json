@@ -1,0 +1,12 @@
+{
+  "name": "hangul-converter-api",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "한글 변환기 API (Vercel Serverless)",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
