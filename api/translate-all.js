@@ -57,9 +57,8 @@ export default async function handler(req, res) {
 4. Thai (태국어)
 5. Spanish (스페인어)
 6. French (프랑스어)
-7. German (독일어)
-8. Italian (이탈리아어)
-9. Korean (한국어)
+7. Italian (이탈리아어)
+8. Korean (한국어)
 
 중요한 규칙:
 - 국제적으로 알려진 고유명사(도시명, 브랜드명, 유명인 등)는 원어 그대로 유지하고 번역하지 마세요
