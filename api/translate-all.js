@@ -10,7 +10,6 @@ const TARGET_LANGUAGES = [
   { code: 'th', name: 'ภาษาไทย', flag: '🇹🇭' },
   { code: 'es', name: 'Español', flag: '🇪🇸' },
   { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
   { code: 'it', name: 'Italiano', flag: '🇮🇹' },
   { code: 'ko', name: '한국어', flag: '🇰🇷' }
 ];
