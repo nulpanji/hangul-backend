@@ -61,9 +61,11 @@ export default async function handler(req, res) {
 
 중요한 규칙:
 1. 먼저 입력 텍스트가 어떤 언어인지 감지하세요 (en, ja, vi, th, es, fr, it, ko 중 하나)
-2. 국제적으로 잘 알려진 고유명사(도시명, 국가명, 브랜드명, 인명 등)는 원어 그대로 유지하세요
-   예: Seoul, Tokyo, Paris, BMW, Apple, BTS, iPhone 등
-3. 각 언어의 자연스러운 표현으로 번역하세요
+2. 번역(translation)할 때는 고유명사를 자연스럽게 번역하세요
+3. **발음(pronunciation)은 모든 단어를 한글로 음차 표기하세요** - 고유명사도 포함!
+   예: "Seoul Station" → "서울 스테이션"
+   예: "Paris" → "파리" 또는 "빠리"
+   예: "iPhone" → "아이폰"
 4. 한글 발음은 실제 발음에 최대한 가깝게 표기하세요
 5. JSON 형식으로만 답변하고, 다른 설명은 하지 마세요
 
@@ -75,31 +77,31 @@ export default async function handler(req, res) {
   "translations": {
     "en": {
       "translation": "영어 번역",
-      "pronunciation": "한글 발음"
+      "pronunciation": "모든 단어를 한글로 음차 (고유명사 포함)"
     },
     "ja": {
       "translation": "일본어 번역",
-      "pronunciation": "한글 발음"
+      "pronunciation": "모든 단어를 한글로 음차 (고유명사 포함)"
     },
     "vi": {
       "translation": "베트남어 번역",
-      "pronunciation": "한글 발음"
+      "pronunciation": "모든 단어를 한글로 음차 (고유명사 포함)"
     },
     "th": {
       "translation": "태국어 번역",
-      "pronunciation": "한글 발음"
+      "pronunciation": "모든 단어를 한글로 음차 (고유명사 포함)"
     },
     "es": {
       "translation": "스페인어 번역",
-      "pronunciation": "한글 발음"
+      "pronunciation": "모든 단어를 한글로 음차 (고유명사 포함)"
     },
     "fr": {
       "translation": "프랑스어 번역",
-      "pronunciation": "한글 발음"
+      "pronunciation": "모든 단어를 한글로 음차 (고유명사 포함)"
     },
     "it": {
       "translation": "이탈리아어 번역",
-      "pronunciation": "한글 발음"
+      "pronunciation": "모든 단어를 한글로 음차 (고유명사 포함)"
     },
     "ko": {
       "translation": "한국어 번역",
@@ -135,11 +137,11 @@ export default async function handler(req, res) {
       pronunciation: translations[lang.code]?.pronunciation || ''
     }));
 
-    // 성공 응답 (detectedLanguage 추가!)
+    // 성공 응답
     res.status(200).json({
       success: true,
       original: text,
-      detectedLanguage: detectedLanguage,  // ✅ 추가!
+      detectedLanguage: detectedLanguage,
       results: results
     });
 
